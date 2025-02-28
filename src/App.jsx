@@ -50,10 +50,12 @@ function App() {
       <div className='container'>
         <h1>Sea Chess (Tic-Tac-Toe)</h1>
         <div className='board'>
-
+          {gameState.map((cell, index) => (
+            <button key={index} className='cell' onClick={() => handleClick(index)}>
+              {cell}
+            </button>
+          ))}
         </div>
-        <h2>Next Player: </h2>
-        <button className='reset'>Reset Game</button>
         <h2>Next Player: {currentPlayer}</h2>
         <button className='reset' onClick={resetGame}>Reset Game</button>
       </div>
