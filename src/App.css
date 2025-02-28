@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Center the game */
+.container {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Grid for Tic-Tac-Toe */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Individual Cell (Button) */
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cell:hover {
+  background-color: #f0f0f0;
 }
 
-.card {
-  padding: 2em;
+/* Reset Button */
+.reset {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+.reset:hover {
+  background-color: #cc0000;
 }
