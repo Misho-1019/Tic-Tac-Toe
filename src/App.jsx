@@ -22,6 +22,23 @@ function App() {
     return null;
   }
 
+  const handleClick = (index) => {
+    if (!gameState[index] && !checkWinner(gameState)) {
+      const newGameState = [...gameState]
+      newGameState[index] = currentPlayer;
+      setGameState(newGameState)
+
+      if (checkWinner(newGameState)) {
+        alert(`Player ${currentPlayer} wins!`)
+      }
+      else if (!newGameState.includes(null)) {
+        alert("It's a draw!")
+      }
+      else {
+        setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X')
+      }
+    }
+  }
 
   return (
     <>
